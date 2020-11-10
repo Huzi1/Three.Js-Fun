@@ -16,6 +16,8 @@ body {
   #heading {
     /* position the heading */
     position: absolute; 
+    left:40%;
+    right:40%;
     width: 100%;
   
     /* make sure that the heading is drawn on top */
@@ -28,11 +30,6 @@ body {
     /* position: absolute; */
     /* width: 100%; */
     height: 80%;
-    z-index:
-  
-    /*
-      Set the container's background color to the same as the scene's
-      background to prevent flashing on load
-    */
-    background-color: skyblue;
+    
+    /* background-color: skyblue; */
   }
