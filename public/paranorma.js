@@ -1,22 +1,14 @@
 
 import {
     Vector3,
-    Color,
     Mesh,
     MeshBasicMaterial,
     SphereGeometry,
     PerspectiveCamera,
     Scene,
     WebGLRenderer,
-    DirectionalLight,
-    BackSide,
     Matrix4,
-    LineBasicMaterial,
     TextureLoader,
-    Texture,
-    Line,
-    Geometry,
-    OrthographicCamera
 } from '/build/three.module.js';
 
 
@@ -47,22 +39,18 @@ let lastMouseX = 0;
 let lastMouseY = 0;
 let lastLon = 0;
 let lastLat = 0;
-// var material; // A line material
-// var selected; // Object that was picked
-// var mouseIsPressed, mouseX, mouseY, pmouseX, pmouseY;
+
 
 function init() {
     renderer = new WebGLRenderer({ alpha: true });
     renderer.setSize(windowWidth, 0.8 * windowHeight);
     renderer.setPixelRatio(dpr);
     renderer.domElement.className = 'panView'
-    // app.appendChild(renderer.domElement);
     container.appendChild(renderer.domElement);
     scene = new Scene();
     camera = new PerspectiveCamera(75, aspect, nearPlane, farPlane);
     camera.target = new Vector3(0, 0, 0);
-    // camera.layers.enable(0);
-    // camera.layers.enable(1);
+   
     createSphere();
     initEventListeners();
     animate();
@@ -73,7 +61,7 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
     renderer.setSize(window.innerWidth, 0.8 * window.innerHeight);
-    // finally, set the 
+   
 
     render();
 }, false);
@@ -176,7 +164,7 @@ function render() {
 function handleDocumentMouseDown(event) {
     event.preventDefault();
     isManual = true;
-    
+
 
     const clientX = event.clientX || event.touches[0].clientX;
     const clientY = event.clientY || event.touches[0].clientY;

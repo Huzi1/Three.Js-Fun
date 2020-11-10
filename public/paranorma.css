@@ -27,9 +27,8 @@ body {
 
 #scene-container {
     /* tell our scene container to take up the full page */
-    /* position: absolute; */
-    /* width: 100%; */
+    
     height: 80%;
     
-    /* background-color: skyblue; */
+    
   }
